@@ -12,7 +12,7 @@ def send_html():
 def bot_move():
     data_str = request.data.decode()
     data = json.loads(data_str)
-    return json.dumps(next_move(data))
+    return json.dumps(next_move(data["state"]))
 
 if __name__ == '__main__':
     app.run()

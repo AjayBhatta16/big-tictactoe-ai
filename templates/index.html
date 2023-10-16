@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI TicTacToe</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'index.css') }}">
+</head>
+<body>
+    <h1>9x9 Tic-Tac-Toe</h1>
+    <div class="board">
+        <div class="cell" data-cell="" data-row="0" data-col="0"></div>
+        <div class="cell" data-cell="" data-row="0" data-col="1"></div>
+        <div class="cell" data-cell="" data-row="0" data-col="2"></div>
+        <div class="cell" data-cell="" data-row="0" data-col="3"></div>
+        <div class="cell" data-cell="" data-row="0" data-col="4"></div>
+        <div class="cell" data-cell="" data-row="0" data-col="5"></div>
+        <div class="cell" data-cell="" data-row="0" data-col="6"></div>
+        <div class="cell" data-cell="" data-row="0" data-col="7"></div>
+        <div class="cell" data-cell="" data-row="0" data-col="8"></div>
+        <div class="cell" data-cell="" data-row="1" data-col="0"></div>
+        <div class="cell" data-cell="" data-row="1" data-col="1"></div>
+        <div class="cell" data-cell="" data-row="1" data-col="2"></div>
+        <div class="cell" data-cell="" data-row="1" data-col="3"></div>
+        <div class="cell" data-cell="" data-row="1" data-col="4"></div>
+        <div class="cell" data-cell="" data-row="1" data-col="5"></div>
+        <div class="cell" data-cell="" data-row="1" data-col="6"></div>
+        <div class="cell" data-cell="" data-row="1" data-col="7"></div>
+        <div class="cell" data-cell="" data-row="1" data-col="8"></div>
+        <div class="cell" data-cell="" data-row="2" data-col="0"></div>
+        <div class="cell" data-cell="" data-row="2" data-col="1"></div>
+        <div class="cell" data-cell="" data-row="2" data-col="2"></div>
+        <div class="cell" data-cell="" data-row="2" data-col="3"></div>
+        <div class="cell" data-cell="" data-row="2" data-col="4"></div>
+        <div class="cell" data-cell="" data-row="2" data-col="5"></div>
+        <div class="cell" data-cell="" data-row="2" data-col="6"></div>
+        <div class="cell" data-cell="" data-row="2" data-col="7"></div>
+        <div class="cell" data-cell="" data-row="2" data-col="8"></div>
+        <div class="cell" data-cell="" data-row="3" data-col="0"></div>
+        <div class="cell" data-cell="" data-row="3" data-col="1"></div>
+        <div class="cell" data-cell="" data-row="3" data-col="2"></div>
+        <div class="cell" data-cell="" data-row="3" data-col="3"></div>
+        <div class="cell" data-cell="" data-row="3" data-col="4"></div>
+        <div class="cell" data-cell="" data-row="3" data-col="5"></div>
+        <div class="cell" data-cell="" data-row="3" data-col="6"></div>
+        <div class="cell" data-cell="" data-row="3" data-col="7"></div>
+        <div class="cell" data-cell="" data-row="3" data-col="8"></div>
+        <div class="cell" data-cell="" data-row="4" data-col="0"></div>
+        <div class="cell" data-cell="" data-row="4" data-col="1"></div>
+        <div class="cell" data-cell="" data-row="4" data-col="2"></div>
+        <div class="cell" data-cell="" data-row="4" data-col="3"></div>
+        <div class="cell" data-cell="" data-row="4" data-col="4"></div>
+        <div class="cell" data-cell="" data-row="4" data-col="5"></div>
+        <div class="cell" data-cell="" data-row="4" data-col="6"></div>
+        <div class="cell" data-cell="" data-row="4" data-col="7"></div>
+        <div class="cell" data-cell="" data-row="4" data-col="8"></div>
+        <div class="cell" data-cell="" data-row="5" data-col="0"></div>
+        <div class="cell" data-cell="" data-row="5" data-col="1"></div>
+        <div class="cell" data-cell="" data-row="5" data-col="2"></div>
+        <div class="cell" data-cell="" data-row="5" data-col="3"></div>
+        <div class="cell" data-cell="" data-row="5" data-col="4"></div>
+        <div class="cell" data-cell="" data-row="5" data-col="5"></div>
+        <div class="cell" data-cell="" data-row="5" data-col="6"></div>
+        <div class="cell" data-cell="" data-row="5" data-col="7"></div>
+        <div class="cell" data-cell="" data-row="5" data-col="8"></div>
+        <div class="cell" data-cell="" data-row="6" data-col="0"></div>
+        <div class="cell" data-cell="" data-row="6" data-col="1"></div>
+        <div class="cell" data-cell="" data-row="6" data-col="2"></div>
+        <div class="cell" data-cell="" data-row="6" data-col="3"></div>
+        <div class="cell" data-cell="" data-row="6" data-col="4"></div>
+        <div class="cell" data-cell="" data-row="6" data-col="5"></div>
+        <div class="cell" data-cell="" data-row="6" data-col="6"></div>
+        <div class="cell" data-cell="" data-row="6" data-col="7"></div>
+        <div class="cell" data-cell="" data-row="6" data-col="8"></div>
+        <div class="cell" data-cell="" data-row="7" data-col="0"></div>
+        <div class="cell" data-cell="" data-row="7" data-col="1"></div>
+        <div class="cell" data-cell="" data-row="7" data-col="2"></div>
+        <div class="cell" data-cell="" data-row="7" data-col="3"></div>
+        <div class="cell" data-cell="" data-row="7" data-col="4"></div>
+        <div class="cell" data-cell="" data-row="7" data-col="5"></div>
+        <div class="cell" data-cell="" data-row="7" data-col="6"></div>
+        <div class="cell" data-cell="" data-row="7" data-col="7"></div>
+        <div class="cell" data-cell="" data-row="7" data-col="8"></div>
+        <div class="cell" data-cell="" data-row="8" data-col="0"></div>
+        <div class="cell" data-cell="" data-row="8" data-col="1"></div>
+        <div class="cell" data-cell="" data-row="8" data-col="2"></div>
+        <div class="cell" data-cell="" data-row="8" data-col="3"></div>
+        <div class="cell" data-cell="" data-row="8" data-col="4"></div>
+        <div class="cell" data-cell="" data-row="8" data-col="5"></div>
+        <div class="cell" data-cell="" data-row="8" data-col="6"></div>
+        <div class="cell" data-cell="" data-row="8" data-col="7"></div>
+        <div class="cell" data-cell="" data-row="8" data-col="8"></div>
+    </div>
+    <br>
+    <button class="md-button">New Game</button>
+</body>
+<script src="{{ url_for('static', filename = 'main.js') }}"></script>
+</html>

@@ -1,0 +1,70 @@
+body {
+    font-family: 'Roboto', sans-serif; /* Typical font for Material Design */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #ECEFF1; /* Material Design background color */
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(9, 40px); /* creates 9 columns each of 40px width */
+    grid-gap: 3px;
+    border: 1px solid #B0BEC5; /* Material Design shade of gray */
+    margin-top: 35px;
+    margin-bottom: 25px;
+}
+
+.cell {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Material Design shadow */
+    cursor: pointer;
+    font-size: 24px; /* Size for the X or O marks */
+}
+
+.cell:hover {
+    background-color: #ECEFF1; /* Slightly different shade for hover */
+}
+
+.cell.x, .cell.X {
+    color: #1976D2; /* Material Design shade of blue */
+    background-color: #ECEFF1;
+}
+
+.cell.o, .cell.O {
+    color: #D32F2F; /* Material Design shade of red */
+    background-color: #ECEFF1;
+}
+
+.md-button {
+    padding: 12px 24px;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1.25px;
+    border: none;
+    border-radius: 4px;
+    background-color: #1976D2; /* Material Design shade of blue */
+    color: #FFFFFF; /* White color for the text */
+    cursor: pointer;
+    outline: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Material Design shadow */
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s; /* Smooth transitions */
+}
+
+.md-button:hover {
+    background-color: #1565C0; /* Slightly darker shade of blue for hover */
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3); /* Bigger shadow on hover */
+}
+
+.md-button:active {
+    background-color: #0D47A1; /* Even darker shade for active state */
+    transform: scale(0.98); /* Slight scale to give a pressed effect */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); /* Less shadow for pressed state */
+}

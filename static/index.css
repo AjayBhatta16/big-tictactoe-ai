@@ -17,6 +17,15 @@ body {
     margin-bottom: 25px;
 }
 
+.board-v7 {
+    display: grid;
+    grid-template-columns: repeat(7, 40px); /* creates 9 columns each of 40px width */
+    grid-gap: 3px;
+    border: 1px solid #B0BEC5; /* Material Design shade of gray */
+    margin-top: 35px;
+    margin-bottom: 25px;
+}
+
 .cell {
     width: 40px;
     height: 40px;
@@ -67,4 +76,28 @@ body {
     background-color: #0D47A1; /* Even darker shade for active state */
     transform: scale(0.98); /* Slight scale to give a pressed effect */
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); /* Less shadow for pressed state */
+}
+
+.container {
+    text-align: center;
+    border-radius: 8px;
+    padding: 40px;
+    background-color: #FFF;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Material Design shadow */
+}
+
+.game-button {
+    display: inline-block;
+    margin: 10px;
+    padding: 12px 24px;
+    background-color: #1976D2; /* Material Design shade of blue */
+    color: #FFFFFF;
+    text-decoration: none;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Material Design shadow */
+    transition: background-color 0.3s;
+}
+
+.game-button:hover {
+    background-color: #1565C0; /* Slightly darker shade of blue for hover */
 }

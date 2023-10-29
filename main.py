@@ -8,6 +8,17 @@ app = Flask(__name__)
 def send_html():
     return render_template('index.html')
 
+@app.route('/v7')
+def send_v7():
+    return render_template('v7.html')
+
+@app.route('/v9')
+def send_v9():
+    return render_template('v9.html')
+
+# @app.route('/v11')
+# TODO: Implement
+
 @app.route('/move', methods=['POST'])
 def bot_move():
     data_str = request.data.decode()

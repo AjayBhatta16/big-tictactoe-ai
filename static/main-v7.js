@@ -3,6 +3,7 @@ const boxes = document.querySelectorAll('.cell')
 
 let gameState = new Array(7).fill(null).map(row => new Array(7).fill(0))
 let userTurn = true
+let moveNum = 1
 let userChar = 'X', botChar = 'O'
 
 resetButton.addEventListener('click', ev => {
@@ -17,6 +18,7 @@ resetButton.addEventListener('click', ev => {
 boxes.forEach(box => {
     box.addEventListener('click', ev => {
         if(userTurn) {
+            moveNum++
             userTurn = false 
             let row = ev.target.dataset.row 
             let col = ev.target.dataset.col 
@@ -24,7 +26,7 @@ boxes.forEach(box => {
             ev.target.textContent = userChar
             ev.target.classList.add(userChar)
             gameState[row][col] = -1
-            body = JSON.stringify({state: gameState})
+            body = JSON.stringify({state: gameState, move: moveNum})
             fetch('/move', {
                 method: 'POST',
                 headers: {
@@ -39,6 +41,7 @@ boxes.forEach(box => {
                     let el = document.querySelector(`div[data-row="${row}"][data-col="${col}"]`)
                     el.textContent = botChar
                     el.classList.add(botChar)
+                    moveNum++
                     userTurn = true
                 })
         }

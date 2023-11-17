@@ -59,8 +59,8 @@ def example_pick_move(board):
             print(row, col)
             return {"row": row, "col": col}
         else:
-            row = (row + randint(0,1)) % 6
-            col = (col + randint(0,1)) % 6
+            row = (row + randint(-1,1)) % 6
+            col = (col + randint(-1,1)) % 6
 
 def next_move(board, move):
     # the input is in the form of a 9x9 matrix with the following values

@@ -26,4 +26,4 @@ def bot_move():
     return json.dumps(next_move(data["state"], data["move"]))
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host='0.0.0.0', port=1739)

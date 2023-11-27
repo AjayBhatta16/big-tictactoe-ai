@@ -25,4 +25,5 @@ def webhook():
         return 'Webhook received and processed.', 200
 
 if __name__ == '__main__':
+    restart_main_server()
     app.run(host='0.0.0.0', port=8069)

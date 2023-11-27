@@ -23,7 +23,7 @@ def send_v9():
 def bot_move():
     data_str = request.data.decode()
     data = json.loads(data_str)
-    return json.dumps(next_move(data["state"]))
+    return json.dumps(next_move(data["state"], data["move"]))
 
 if __name__ == '__main__':
     app.run()

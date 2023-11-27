@@ -7,13 +7,15 @@ let moveNum = 1
 let userChar = 'X', botChar = 'O'
 
 function gameOver(winner) {
-    alert(winner == "tie" ? "Tie Game" : `{winner} won`)
+    setTimeout(() => {
+        alert(winner == "tie" ? "Tie Game" : `${winner} won`)
+        boxes.forEach(box => {
+            box.classList = ["cell"]
+            box.textContent = ""
+        })
+    }, 300)
     gameState = new Array(7).fill(null).map(row => new Array(7).fill(0))
     userTurn = true
-    boxes.forEach(box => {
-        box.classList = ["cell"]
-        box.textContent = ""
-    })
     return true
 }
 
@@ -91,6 +93,10 @@ function checkGameOver(board) {
             }
         }
     }
+    if(!board.some(arr => arr.some(x => x == 0))) {
+        return gameOver("tie")
+    }
+    return false
 }
 
 resetButton.addEventListener('click', ev => {

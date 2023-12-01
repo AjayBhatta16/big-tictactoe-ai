@@ -1,4 +1,7 @@
 from random import randint
+import requests
+import json
+from env import COLAB_URL
 
 from v7bot import TicTacToe2
 # DEFINE HELPER FUNCTIONS HERE IF NEEDED
@@ -120,7 +123,17 @@ def next_move(board, move):
         print("blocking user win")
         return {"row": userWin[0], "col": userWin[1]}
     #TODO: IMPLEMENT AI STUFF HERE
-    bot = TicTacToe2(board)
-    return bot.find_best_move()
+    response = requests.post(
+        COLAB_URL+"/predict", 
+        headers={'Content-Type': 'application/json'},
+        data=json.dumps({"state": board})
+    )
+    # print(response.status_code, "-", response.reason, "-", response.text)
+    if response.status_code == 200:
+        res_data = response.json()
+        print(res_data)
+        return res_data
+    else:
+        return {"error_code": res.status_code}
     # Keep the return value of the function in this format
     # return example_pick_move(board)

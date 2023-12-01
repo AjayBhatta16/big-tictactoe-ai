@@ -1,0 +1,15 @@
+CSC 401 Final 
+12 Questions, 10 points each
+
+History (probably fill-in-the-blank with word bank)
+Functional Programming
+Lisp (probably code writing)
+Logic Programming
+Prolog (probably code writing)
+Statements
+Subprograms
+Data Types
+Names/Binding/Scope
+Grammars
+Python (probably code writing)
+Miscellaneous

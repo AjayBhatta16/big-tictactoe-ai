@@ -36,8 +36,6 @@ class TicTacToe2:
                     return False
         return True
 
-    
-
     def best_move(self):
         with concurrent.futures.ThreadPoolExecutor(max_workers=2) as executor:
             future_ai = executor.submit(self.find_best_move)

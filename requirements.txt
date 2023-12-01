@@ -28,3 +28,4 @@ tzdata==2023.3
 werkzeug==3.0.0
 psutil
 zipp==3.17.0
+requests

@@ -112,10 +112,10 @@ boxes.forEach(box => {
     box.addEventListener('click', ev => {
         if(userTurn) {
             moveNum++
-            userTurn = false 
             let row = ev.target.dataset.row 
             let col = ev.target.dataset.col 
             if(gameState[row][col] != 0) return
+            userTurn = false 
             ev.target.textContent = userChar
             ev.target.classList.add(userChar)
             gameState[row][col] = -1

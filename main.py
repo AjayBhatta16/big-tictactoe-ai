@@ -16,8 +16,9 @@ def send_v7():
 def send_v9():
     return render_template('v9.html')
 
-# @app.route('/v11')
-# TODO: Implement
+@app.route('/v11')
+def send_v11():
+    return render_template('v11.html')
 
 @app.route('/move', methods=['POST'])
 def bot_move():

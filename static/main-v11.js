@@ -1,7 +1,7 @@
 const resetButton = document.querySelector('.md-button')
 const boxes = document.querySelectorAll('.cell')
 
-let gameState = new Array(9).fill(null).map(row => new Array(9).fill(0))
+let gameState = new Array(11).fill(null).map(row => new Array(11).fill(0))
 let userTurn = true
 let moveNum = 1
 let userChar = 'X', botChar = 'O'
@@ -14,14 +14,14 @@ function gameOver(winner) {
             box.textContent = ""
         })
     }, 300)
-    gameState = new Array(9).fill(null).map(row => new Array(9).fill(0))
+    gameState = new Array(11).fill(null).map(row => new Array(11).fill(0))
     userTurn = true
     return true
 }
 
 function checkGameOver(board) {
-    for (let i = 0; i < 9; i++) {
-        for (let j = 0; j < 6; j++) {
+    for (let i = 0; i < 11; i++) {
+        for (let j = 0; j < 8; j++) {
             // Check rows
             if (
                 board[i][j] === 1 &&
@@ -57,8 +57,8 @@ function checkGameOver(board) {
         }
     }
     // diagonals
-    for (let i = 0; i < 6; i++) {
-        for (let j = 0; j < 6; j++) {
+    for (let i = 0; i < 8; i++) {
+        for (let j = 0; j < 8; j++) {
             // Check diagonals from top-left to bottom-right
             if (
                 board[i][j] === 1 &&
@@ -100,7 +100,7 @@ function checkGameOver(board) {
 }
 
 resetButton.addEventListener('click', ev => {
-    gameState = new Array(9).fill(null).map(row => new Array(9).fill(0))
+    gameState = new Array(11).fill(null).map(row => new Array(11).fill(0))
     userTurn = true
     boxes.forEach(box => {
         box.classList = ["cell"]

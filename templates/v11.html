@@ -6,7 +6,7 @@
     <title>AI TicTacToe</title>
     <link rel="stylesheet" href="{{ url_for('static', filename = 'index.css') }}">
 </head>
-<body>
+<body id="backdrop">
     <h1>11x11 Tic-Tac-Toe</h1>
     <div class="board-v11">
         <div class="cell" data-cell="" data-row="0" data-col="0"></div>
@@ -134,5 +134,5 @@
     <br>
     <button class="md-button">New Game</button>
 </body>
-<script src="{{ url_for('static', filename = 'main-v11.js') }}"></script>
+<script type="module" src="{{ url_for('static', filename = 'main-v11.js') }}"></script>
 </html>

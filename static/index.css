@@ -115,3 +115,9 @@ body {
     background-color: #D32F2F !important;
     margin-bottom: 10px;
 }
+
+body {
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+  }

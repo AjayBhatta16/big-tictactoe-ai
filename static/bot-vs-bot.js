@@ -2,6 +2,10 @@ const resetButton = document.querySelector('.reset-btn')
 const nextTurnButton = document.querySelector('.next-turn-btn')
 const boxes = document.querySelectorAll('.cell')
 
+import * as Decal from './decal.js'
+
+Decal.setBackground()
+
 let gameState = new Array(7).fill(null).map(row => new Array(7).fill(0))
 let userTurn = true
 let moveNum = 1

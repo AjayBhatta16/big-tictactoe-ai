@@ -1,5 +1,10 @@
 const resetButton = document.querySelector('.md-button')
 const boxes = document.querySelectorAll('.cell')
+import {
+    setBackground
+} from "./decal.js"
+
+setBackground()
 
 let gameState = new Array(11).fill(null).map(row => new Array(11).fill(0))
 let userTurn = true

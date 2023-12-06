@@ -110,3 +110,8 @@ body {
 .game-button:hover {
     background-color: #1565C0; /* Slightly darker shade of blue for hover */
 }
+
+.next-turn-btn {
+    background-color: #D32F2F !important;
+    margin-bottom: 10px;
+}

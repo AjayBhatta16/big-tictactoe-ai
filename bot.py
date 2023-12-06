@@ -134,6 +134,6 @@ def next_move(board, move):
         print(res_data)
         return res_data
     else:
-        return {"error_code": res.status_code}
+        return {"error_code": response.status_code}
     # Keep the return value of the function in this format
     # return example_pick_move(board)

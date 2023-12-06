@@ -20,11 +20,22 @@ def send_v9():
 def send_v11():
     return render_template('v11.html')
 
+@app.route('/botmode')
+def send_botmode():
+    return render_template('bot-vs-bot.html')
+
 @app.route('/move', methods=['POST'])
 def bot_move():
     data_str = request.data.decode()
     data = json.loads(data_str)
     return json.dumps(next_move(data["state"], data["move"]))
+
+@app.route('/rit-move', methods=['POST'])
+def rit_move():
+    data_str = request.data.decode()
+    data = json.loads(data_str)
+    #TODO: Implement
+    return json.dumps({"row": 0, "col": 0})
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=1739)

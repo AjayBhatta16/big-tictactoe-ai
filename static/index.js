@@ -1,5 +1,3 @@
-import {
-    setBackground
-} from "./decal.js"
+import * as Decal from './decal.js'
 
-setBackground()
+Decal.setBackground()

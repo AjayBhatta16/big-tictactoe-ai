@@ -6,7 +6,7 @@
     <title>AI TicTacToe</title>
     <link rel="stylesheet" href="{{ url_for('static', filename = 'index.css') }}">
 </head>
-<body>
+<body id="backdrop">
     <h1>Bot vs Bot</h1>
     <div class="board-v7">
         <div class="cell" data-cell="" data-row="0" data-col="0"></div>
@@ -63,5 +63,5 @@
     <button class="md-button next-turn-btn">Next Turn</button>
     <button class="md-button reset-btn">New Game</button>
 </body>
-<script src="{{ url_for('static', filename = 'bot-vs-bot.js') }}"></script>
+<script type="module" src="{{ url_for('static', filename = 'bot-vs-bot.js') }}"></script>
 </html>

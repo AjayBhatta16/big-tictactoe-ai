@@ -1,6 +1,7 @@
 import multiprocessing
 import copy
 from square_matrix import SquareMatrix
+import math
 
 class Node:
     def __init__(self, gamestate):
@@ -63,23 +64,61 @@ def parallel_funct(state, rootNodeChildren):
 
 #TODO: would help performance
 def has_win_state(state):
+    win_len = min(state.get_size(), 4)
+    win_shift = win_len-1
+    # check rows
+    for i in range(state.get_size()):
+        for j in range(state.get_size()-win_shift):
+            total = 0
+            for x in range(win_len):
+                total += state.get_value(i, j+x)
+            if abs(total) == win_len:
+                return True
+    # check columns
+    for i in range(state.get_size()-win_shift):
+        for j in range(state.get_size()):
+            total = 0
+            for x in range(win_len):
+                total += state.get_value(i+x, j)
+            if abs(total) == win_len:
+                return True
+    # check diagonal TL to BR
+    for i in range(state.get_size()-win_shift):
+        for j in range(state.get_size()-win_shift):
+            total = 0
+            for x in range(win_len):
+                total += state.get_value(i+x, j+x)
+            if abs(total) == win_len:
+                return True
+    # check diagonal TR to BL
+    for i in range(state.get_size()-win_shift):
+        for j in range(win_shift, state.get_size()):
+            total = 0
+            for x in range(win_len):
+                total += state.get_value(i+x, j-x)
+            if abs(total) == win_len:
+                return True
+    # no  winner
     return False
 
 def create_node(state, isBotTurn):
     newNode = Node(state)
-    for i in range(state.get_size()):
-        for j in range(state.get_size()):
-            if state.get_value(i, j) == 0:
-                nodeOne = copy.deepcopy(state)
-                if isBotTurn:
-                    nodeOne.set_value(i, j, 1)
-                else:
-                    nodeOne.set_value(i, j, -1)
-                if not has_win_state(newNode.state):
-                    oneNode = create_node(nodeOne, not isBotTurn)
-                if oneNode != None:
-                    newNode.add_child(oneNode)
-    # print(newNode.state, str(len(newNode.children)) + " children")
+    if has_win_state(state):
+        var = 1
+        # print(str(state) + " - winstate, ignoring")
+    else:
+        for i in range(state.get_size()):
+            for j in range(state.get_size()):
+                # create child nodes where there's an empty spot and append to current node
+                if state.get_value(i, j) == 0:
+                    potentChildState = copy.deepcopy(state)
+                    if isBotTurn:
+                        potentChildState.set_value(i, j, 1)
+                    else:
+                        potentChildState.set_value(i, j, -1)
+                    newNodeChild = create_node(potentChildState, not isBotTurn)
+                    newNode.add_child(newNodeChild)
+                    # print(newNode.state, str(len(newNode.children)) + " children")
     return newNode
 
 # I wouldn't reccomend running n>3 on your own machine

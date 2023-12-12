@@ -1,7 +1,6 @@
 from random import randint
 import requests
 import json
-from env import COLAB_URL
 
 from v7bot import TicTacToe2
 # DEFINE HELPER FUNCTIONS HERE IF NEEDED
@@ -107,7 +106,7 @@ def hasPartialWin(board, x):
                 return result
     return False
 
-def next_move(board, move):
+def next_move(board, move, colab_url):
     # the input is in the form of a 9x9 matrix with the following values
     # 0 represents open squares
     # 1 represents squares already occupied by the bot
@@ -124,7 +123,7 @@ def next_move(board, move):
         return {"row": userWin[0], "col": userWin[1]}
     #TODO: IMPLEMENT AI STUFF HERE
     response = requests.post(
-        COLAB_URL+"/predict", 
+        colab_url+"/predict", 
         headers={'Content-Type': 'application/json'},
         data=json.dumps({"state": board})
     )
@@ -137,3 +136,17 @@ def next_move(board, move):
         return {"error_code": response.status_code}
     # Keep the return value of the function in this format
     # return example_pick_move(board)
+
+def opp_move(board, colab_url):
+    response = requests.post(
+        colab_url+"/opp_move", 
+        headers={'Content-Type': 'application/json'},
+        data=json.dumps({"state": board})
+    )
+    # print(response.status_code, "-", response.reason, "-", response.text)
+    if response.status_code == 200:
+        res_data = response.json()
+        print(res_data)
+        return res_data
+    else:
+        return {"error_code": response.status_code}

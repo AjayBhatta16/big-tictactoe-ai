@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300&family=Dhurjati&family=VT323&display=swap');
+
 body {
     font-family: 'Roboto', sans-serif; /* Typical font for Material Design */
     display: flex;
@@ -17,9 +19,27 @@ body {
     margin-bottom: 25px;
 }
 
+.board-v3 {
+    display: grid;
+    grid-template-columns: repeat(3, 40px); /* creates 9 columns each of 40px width */
+    grid-gap: 3px;
+    border: 1px solid #B0BEC5; /* Material Design shade of gray */
+    margin-top: 35px;
+    margin-bottom: 25px;
+}
+
 .board-v7 {
     display: grid;
     grid-template-columns: repeat(7, 40px); /* creates 9 columns each of 40px width */
+    grid-gap: 3px;
+    border: 1px solid #B0BEC5; /* Material Design shade of gray */
+    margin-top: 35px;
+    margin-bottom: 25px;
+}
+
+.board-v5 {
+    display: grid;
+    grid-template-columns: repeat(5, 40px); /* creates 9 columns each of 40px width */
     grid-gap: 3px;
     border: 1px solid #B0BEC5; /* Material Design shade of gray */
     margin-top: 35px;
@@ -93,6 +113,7 @@ body {
     padding: 40px;
     background-color: #FFF;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Material Design shadow */
+    max-width: 600px;
 }
 
 .game-button {
@@ -120,4 +141,11 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-  }
+}
+
+h1 {
+    background-color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-family: 'Dhurjati', sans-serif;
+}

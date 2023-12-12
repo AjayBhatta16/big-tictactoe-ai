@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI TicTacToe</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'index.css') }}">
+</head>
+<body id="backdrop">
+    <h1>3x3 Tic-Tac-Toe</h1>
+    <div class="board-v3">
+        <div class="cell" data-cell="" data-row="0" data-col="0"></div>
+        <div class="cell" data-cell="" data-row="0" data-col="1"></div>
+        <div class="cell" data-cell="" data-row="0" data-col="2"></div>
+        <div class="cell" data-cell="" data-row="1" data-col="0"></div>
+        <div class="cell" data-cell="" data-row="1" data-col="1"></div>
+        <div class="cell" data-cell="" data-row="1" data-col="2"></div>
+        <div class="cell" data-cell="" data-row="2" data-col="0"></div>
+        <div class="cell" data-cell="" data-row="2" data-col="1"></div>
+        <div class="cell" data-cell="" data-row="2" data-col="2"></div>
+    </div>
+    <br>
+    <button class="md-button">New Game</button>
+</body>
+<script  type="module" src="{{ url_for('static', filename = 'main-v3.js') }}"></script>
+</html>

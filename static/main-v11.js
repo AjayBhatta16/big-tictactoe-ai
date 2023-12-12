@@ -122,7 +122,7 @@ boxes.forEach(box => {
             ev.target.textContent = userChar
             ev.target.classList.add(userChar)
             gameState[row][col] = -1
-            body = JSON.stringify({state: gameState, move: moveNum})
+            let body = JSON.stringify({state: gameState, move: moveNum})
             if(checkGameOver(gameState)) {
                 return 
             }

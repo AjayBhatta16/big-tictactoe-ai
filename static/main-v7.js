@@ -125,7 +125,7 @@ boxes.forEach(box => {
             if(checkGameOver(gameState)) {
                 return 
             }
-            body = JSON.stringify({state: gameState, move: moveNum})
+            let body = JSON.stringify({state: gameState, move: moveNum})
             fetch('/move', {
                 method: 'POST',
                 headers: {

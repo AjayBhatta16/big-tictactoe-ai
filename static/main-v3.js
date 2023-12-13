@@ -6,7 +6,7 @@ import {
 
 setBackground()
 
-let gameState = new Array(5).fill(null).map(row => new Array(5).fill(0))
+let gameState = new Array(3).fill(null).map(row => new Array(3).fill(0))
 let userTurn = true
 let moveNum = 1
 let userChar = 'X', botChar = 'O'

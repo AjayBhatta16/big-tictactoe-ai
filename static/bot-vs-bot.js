@@ -114,7 +114,7 @@ resetButton.addEventListener('click', ev => {
 })
 
 nextTurnButton.addEventListener('click', ev => {
-    body = JSON.stringify({state: gameState, move: moveNum})
+    let body = JSON.stringify({state: gameState, move: moveNum})
     if(userTurn) {
         fetch('/rit-move', {
             method: 'POST',
@@ -126,7 +126,7 @@ nextTurnButton.addEventListener('click', ev => {
             .then(res => {
                 let row = res.row 
                 let col = res.col 
-                gameState[row][col] = 1 
+                gameState[row][col] = -1 
                 let el = document.querySelector(`div[data-row="${row}"][data-col="${col}"]`)
                 el.textContent = userChar
                 el.classList.add(userChar)
